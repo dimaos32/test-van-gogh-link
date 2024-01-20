@@ -1,3 +1,20 @@
+:root {
+  --container-max-width: 1520px;
+  --container-padding-x: 40px;
+
+  @include vp-767 {
+    --container-padding-x: 45px;
+  }
+
+  @include vp-479 {
+    --container-padding-x: 20px;
+  }
+
+  @include vp-374 {
+    --container-padding-x: 10px;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -12,12 +29,14 @@ body {
 }
 
 html {
+  scroll-behavior: smooth;
+
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
   font-family: $ff-inter;
-  color: $color-default-black;
+  color: $color-site-text;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,18 +44,41 @@ html {
   text-rendering: optimizeLegibility;
   // если по прежнему есть проблемы с выравниванием
   // https://transfonter.org/ - включите настройку https://prnt.sc/12rnt6g и переконвертируйте шрифт
+
+  @include vp-479 {
+    font-size: 14px;
+  }
 }
 
 body {
   width: 100%;
+  min-width: 320px;
   height: 100%;
 
-  background-color: $color-default-white;
+  background-color: $color-site-background;
+}
+
+section {
+  margin: 64px 0;
+
+  @include vp-767 {
+    margin: 60px 0;
+  }
+
+  @include vp-374 {
+    margin: 40px 0;
+  }
 }
 
 a {
-  color: $color-default-black;
+  color: $color-site-text;
   text-decoration: none;
+
+  transition: color $trans-default;
+
+  @include hover-focus {
+    color: $color-charcoal;
+  }
 }
 
 img,
