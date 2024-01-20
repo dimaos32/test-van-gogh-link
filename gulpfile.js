@@ -1,10 +1,10 @@
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
-import {deleteAsync} from 'del';
-import {compileStyles, compileMinStyles} from './gulp/compileStyles.mjs';
-import {copy, copyImages, copySvg} from './gulp/copyAssets.mjs';
+import { deleteAsync } from 'del';
+import { compileStyles, compileMinStyles } from './gulp/compileStyles.mjs';
+import { copy, copyImages, copySvg } from './gulp/copyAssets.mjs';
 import compileScripts from './gulp/compileScripts.mjs';
-import {optimizeSvg, sprite, createWebp, createAvif, optimizePng, optimizeJpg} from './gulp/optimizeImages.mjs';
+import { optimizeSvg, sprite, createWebp, createAvif, optimizePng, optimizeJpg } from './gulp/optimizeImages.mjs';
 import pug from './gulp/compilePug.mjs';
 
 const server = browserSync.create();
@@ -18,7 +18,6 @@ const refresh = (done) => {
 const syncServer = () => {
   server.init({
     server: 'build/',
-    index: 'sitemap.html',
     notify: false,
     open: true,
     cors: true,
@@ -46,4 +45,4 @@ const nomin = gulp.series(clean, copy, sprite, gulp.parallel(compileStyles, comp
 
 const optimize = gulp.series(gulp.parallel(optimizePng, optimizeJpg, optimizeSvg));
 
-export {createWebp as webp, createAvif as avif, build, start, dev, nomin, optimize};
+export { createWebp as webp, createAvif as avif, build, start, dev, nomin, optimize };

@@ -8,5 +8,6 @@ env:
   es6: true
   browser: true
   commonjs: true
+  object-curly-spacing: always
 
 extends: "./eslintconfig.cjs"
