@@ -7,21 +7,31 @@ $color-default-black:               #000000;
 $color-default-white:               #ffffff;
 $color-transparent:                 rgba(255, 255, 255, 0);
 
-$color-charcoal:                    #484848;
+$color-nero:                        #1f1f1f;
+$color-whisper:                     #e7e7e7;
 
 $color-red-orange:                  #ee2523;
+$color-free-speech-red:             #c01311;
 
 
 // Project palette
 
 $color-site-accent:                 $color-red-orange;
+$color-site-accent-action:          $color-free-speech-red;
 $color-site-text:                   $color-default-black;
-$color-site-background:             $color-default-white;
+$color-site-bg:                     $color-default-white;
+
+$color-header-text:                 $color-nero;
+$color-header-bg:                   $color-default-white;
+$color-header-menu-delimeter:       $color-whisper;
 
 
 // Gradient
 
-$black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+$shadow-header:
+  1px 1px 3px 1px rgba($color: $color-default-black, $alpha: 0.05);
+$shadow-header-submenu:
+  1px 1px 3px 1px rgba($color: $color-default-black, $alpha: 0.05);
 
 // Typography
 // ---------------------------------

@@ -1,36 +1,84 @@
 mixin header(headerMods, currentUrl)
+  - const logo = ["content", "logo", "svg", "199", "43"];
+
   -
     const headerLinks = [
       {
-        href: "index.html",
-        text: "Главная"
+        href: "#",
+        text: "Интернет",
       },
       {
         href: "#",
-        text: "Страница 2"
+        text: "Телевидение",
       },
       {
         href: "#",
-        text: "Страница 3"
+        text: "Выгодно",
+        list: [
+          {
+            href: "#",
+            text: "Интернет+TV",
+          },
+          {
+            href: "#",
+            text: "Конструктор тарифа",
+          },
+        ],
       },
-    ]
+      {
+        href: "#",
+        text: "Видеонаблюдение",
+      },
+      {
+        href: "#",
+        text: "Оборудование",
+      },
+      {
+        href: "#",
+        text: "Информация",
+        list: [
+          {
+            href: "#",
+            text: "Новости",
+          },
+          {
+            href: "#",
+            text: "Вакансии",
+          },
+        ],
+      },
+      {
+        href: "#",
+        text: "Контакты",
+      },
+    ];
 
   header.header(class=headerMods)
-    .container
-      if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
-      else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
-          ul.main-nav__list
-            each link in headerLinks
-              - const activeState = currentUrl === link.href
-              li.main-nav__item
-                if(activeState)
-                  span.main-nav__link.is-active= link.text
-                else
-                  a.main-nav__link(href=link.href)= link.text
+    .container.header__container
+      a.header__logo(href="index.html", aria-label="Переход на главную")
+        +img(...logo).header__logo-img
+      nav.main-nav.header__nav
+        ul.main-nav__list
+          each link in headerLinks
+            - const activeState = currentUrl === link.href
+            li.main-nav__item
+              if activeState
+                span.main-nav__link.is-active= link.text
+              else
+                +link(link).main-nav__link
+                if link.list
+                  ul.main-nav__submenu-list
+                    each sublink in link.list
+                      - const activeState = currentUrl === sublink.href
+                      li.main-nav__submenu-item
+                        if activeState
+                          span.main-nav__sublink.is-active= sublink.text
+                        else
+                          +link(sublink).main-nav__sublink
+        +link({ href: "tel:+73496458000", text: "+7 (3496) 45-80-00" }).main-nav__phone
+      +link({ href: "#" }).header__user-profile
+        +icon("user", 23, 22)
+      button.header__menu-toggle(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
+        span.header__menu-toggle-line.header__menu-toggle-line--top
+        span.header__menu-toggle-line.header__menu-toggle-line--middle
+        span.header__menu-toggle-line.header__menu-toggle-line--bottom

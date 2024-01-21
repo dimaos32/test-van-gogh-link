@@ -1,0 +1,13 @@
+mixin link(options = {})
+  - const tag = options.href ? "a" : "button";
+  - const href = options.href || false;
+  - const text = options.text || "";
+  - const type = options.type || tag === "button" ? options.type || "button" : false;
+  - const target = options.isExternal ? "_blank" : false;
+  - const rel = options.isExternal ? "nofollow noopener noreferrer" : false;
+  - const ariaLabel = options.ariaLabel || false;
+  - const file = options.isFile || false;
+
+  #{tag}(href=href, target=target, rel=rel, type=type, aria-label=ariaLabel, download=file)&attributes(attributes)!= text
+    if block
+      block

@@ -1,13 +1,41 @@
 .header {
-  padding: 28px 0;
+  position: relative;
+  z-index: 10;
 
-  background-color: $color-site-accent;
+  line-height: 1.5;
+  color: $color-header-text;
 
-  .container {
-    display: flex;
-  }
+  background-color: $color-header-bg;
 
-  &__logo {
-    color: $color-default-white;
-  }
+  box-shadow: $shadow-header;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  flex-shrink: 0;
+  display: block;
+  margin-right: 80px;
+}
+
+.header__logo-img {
+  width: 199px;
+  height: 43px;
+
+  object-fit: contain;
+}
+
+.header__nav {
+  margin-left: auto;
+}
+
+.header__user-profile {
+  display: none;
+}
+
+.header__menu-toggle {
+  display: none;
 }

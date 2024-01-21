@@ -1,27 +1,85 @@
 .main-nav {
-  &__list {
-    display: flex;
-    margin: 0;
-    margin-right: 20px;
-    margin-left: 60px;
-    padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px 80px;
+}
 
-    list-style: none;
-  }
+.main-nav__list {
+  @include clear-list;
 
-  &__item {
-    margin-right: 20px;
-  }
+  display: flex;
+  gap: 12px 36px;
 
-  &__link {
-    color: $color-default-white;
+  background-color: $color-header-bg;
+}
 
-    &.is-active {
-      opacity: 0.6;
+.main-nav__item {
+  position: relative;
+  padding: 18px 0 22px;
+}
+
+.main-nav__link {
+  color: $color-header-text;
+
+  @include hover-focus {
+    & + .main-nav__submenu-list {
+      visibility: visible;
+      opacity: 1;
+
+      transform: translateY(0);
     }
   }
+}
 
-  &__toggle {
-    display: none;
+.main-nav__submenu-list {
+  @include clear-list;
+
+  visibility: hidden;
+  opacity: 0;
+
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: -1;
+  transform: translateY(-10px);
+
+  width: max-content;
+  max-width: 280px;
+  padding-left: 28px;
+  padding-right: 38px;
+
+  background-color: $color-header-bg;
+  box-shadow: $shadow-header-submenu;
+
+  transition:
+    visibility $trans-default,
+    opacity $trans-default,
+    transform $trans-default;
+}
+
+.main-nav__submenu-item {
+  padding: 10px 0;
+
+  border-top: 1px solid $color-header-menu-delimeter;
+
+  &:first-child {
+    padding-top: 25px;
+  }
+
+  &:last-child {
+    padding-bottom: 20px;
+  }
+}
+
+.main-nav__sublink {
+  color: $color-site-text;
+}
+
+.main-nav__phone {
+  font-weight: 600;
+  color: $color-site-accent;
+
+  @include hover-focus {
+    color: $color-site-accent-action;
   }
 }
