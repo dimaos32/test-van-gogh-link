@@ -30,7 +30,7 @@ $color-header-menu-delimeter:       $color-whisper;
 
 $shadow-header:
   1px 1px 3px 1px rgba($color: $color-default-black, $alpha: 0.05);
-$shadow-header-submenu:
+$shadow-header-menu:
   1px 1px 3px 1px rgba($color: $color-default-black, $alpha: 0.05);
 
 // Typography
@@ -58,7 +58,7 @@ $vp-480:                            480px;
 $vp-768:                            768px;
 $vp-1024:                           1024px;
 $vp-1280:                           1280px;
-$vp-1440:                           1520px;
+$vp-1520:                           1520px;
 
 // Retina
 // ---------------------------------

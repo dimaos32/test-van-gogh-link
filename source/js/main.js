@@ -1,5 +1,8 @@
 import { mobileVhFix } from './utils/mobile-vh-fix.js';
+
 // import { initModals } from './modules/modals/init-modals';
+import { initMenu } from './modules/init-menu.js'
+import { initAccordions } from './modules/init-accordion.js'
 
 // ---------------------------------
 
@@ -17,6 +20,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     // initModals();
+    initMenu();
+    initAccordions();
   });
 });
 

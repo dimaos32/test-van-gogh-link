@@ -4,10 +4,20 @@
 
   line-height: 1.5;
   color: $color-header-text;
+}
+
+.header__inner {
+  --padding-box: 10px;
+
+  padding: var(--padding-box) 0;
 
   background-color: $color-header-bg;
 
   box-shadow: $shadow-header;
+
+  @include vp-1519 {
+    --padding-box: 9px;
+  }
 }
 
 .header__container {
@@ -18,7 +28,10 @@
 .header__logo {
   flex-shrink: 0;
   display: block;
-  margin-right: 80px;
+
+  @include vp-1519 {
+    margin-right: auto;
+  }
 }
 
 .header__logo-img {
@@ -26,6 +39,11 @@
   height: 43px;
 
   object-fit: contain;
+
+  @include vp-374 {
+    width: 160px;
+    height: 37px;
+  }
 }
 
 .header__nav {
@@ -33,9 +51,138 @@
 }
 
 .header__user-profile {
+  position: relative;
   display: none;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  margin-left: 168px;
+  padding: 0;
+
+  color: $color-site-accent;
+
+  background-color: $color-transparent;
+  border: none;
+  cursor: pointer;
+
+  transition: color $trans-default;
+
+  &.is-disabled,
+  &:disabled {
+    opacity: 0.5;
+
+    pointer-events: none;
+  }
+
+  @include hover-focus {
+    color: $color-site-accent-action;
+  }
+
+  @include vp-1519 {
+    display: flex;
+
+    @include vp-1023 {
+      margin-left: 71px;
+    }
+
+    @include vp-767 {
+      margin-left: 40px;
+    }
+
+    @include vp-479 {
+      margin-left: 20px;
+    }
+  }
 }
 
 .header__menu-toggle {
+  position: relative;
   display: none;
+  width: 44px;
+  height: 44px;
+  margin-left: 168px;
+  margin-right: -10px;
+  padding: 0;
+
+  color: $color-site-accent;
+
+  background-color: $color-transparent;
+  border: none;
+  cursor: pointer;
+
+  transition: color $trans-default;
+
+  &.is-disabled,
+  &:disabled {
+    opacity: 0.5;
+
+    pointer-events: none;
+  }
+
+  @include hover-focus {
+    color: $color-site-accent;
+
+    & .header__menu-toggle-bar {
+      background-color: $color-site-accent-action;
+    }
+  }
+
+  @include vp-1519 {
+    display: flex;
+  }
+
+  @include vp-1023 {
+    margin-left: 71px;
+  }
+
+  @include vp-767 {
+    margin-left: 40px;
+  }
+
+  @include vp-479 {
+    margin-left: 20px;
+  }
+}
+
+.header__menu-toggle-bar {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 24px;
+  height: 3px;
+
+  background-color: $color-site-accent;
+
+  transition:
+    background-color $trans-default,
+    transform $trans-default,
+    opacity $trans-default;
+
+  &--top {
+    transform: translate(-50%, calc(-50% - 7px));
+
+    .is-opened & {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+
+  &--middle {
+    transform: translate(-50%, -50%);
+
+    .is-opened & {
+      opacity: 0;
+    }
+  }
+
+  &--bottom {
+    transform: translate(-50%, calc(-50% + 7px));
+
+    .is-opened & {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
 }

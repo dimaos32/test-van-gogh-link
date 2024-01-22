@@ -1,7 +1,77 @@
 .main-nav {
+  @include vp-1519 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    visibility: hidden;
+    opacity: 0;
+
+    width: 100%;
+    height: 100vh;
+    /* stylelint-disable-next-line */
+    height: calc(100 * var(--vh, 1vh));
+
+    transition:
+      visibility $trans-default,
+      opacity $trans-default;
+
+    &.is-opened {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+.main-nav__overlay {
+  @include vp-1519 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100vh;
+    /* stylelint-disable-next-line */
+    height: calc(100 * var(--vh, 1vh));
+
+    background-color: rgba($color: $color-default-black, $alpha: 0.6)
+  }
+}
+
+.main-nav__inner {
   display: flex;
   align-items: center;
   gap: 12px 80px;
+
+  @include vp-1519 {
+    --header-height: 61px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transform: translateX(-100%);
+
+    overflow-y: auto;
+
+    display: block;
+    margin-top: var(--header-height);
+    padding: 0 var(--container-padding-x) 20px;
+    max-width: 360px;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    /* stylelint-disable-next-line */
+    height: calc(100 * var(--vh, 1vh) - var(--header-height));
+
+    background-color: $color-header-bg;
+    box-shadow: $shadow-header-menu;
+
+    transition: transform $trans-default;
+
+    .is-opened & {
+      transform: translateX(0);
+    }
+  }
 }
 
 .main-nav__list {
@@ -10,51 +80,140 @@
   display: flex;
   gap: 12px 36px;
 
-  background-color: $color-header-bg;
+  @include vp-1519 {
+    display: block;
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid $color-header-menu-delimeter;
+  }
 }
 
 .main-nav__item {
   position: relative;
-  padding: 18px 0 22px;
+  padding: 8px 0 12px;
+
+  @include rvp-1520 {
+    @include hover {
+      .main-nav__submenu-list {
+        visibility: visible;
+        opacity: 1;
+
+        transform: translateY(0);
+      }
+    }
+
+    &:focus-within {
+      .main-nav__submenu-list {
+        visibility: visible;
+        opacity: 1;
+
+        transform: translateY(0);
+      }
+    }
+  }
+
+  @include vp-1519 {
+    padding: 10px 0;
+
+    border-top: 1px solid $color-header-menu-delimeter;
+
+    &:first-child {
+      padding-top: 25px;
+    }
+
+    &:last-child {
+      padding-bottom: 20px;
+    }
+  }
 }
 
 .main-nav__link {
+  flex-shrink: 1;
+  display: block;
+
   color: $color-header-text;
 
-  @include hover-focus {
-    & + .main-nav__submenu-list {
-      visibility: visible;
-      opacity: 1;
+  .main-nav__submenu-btn + & {
+    margin-right: 64px;
+  }
+}
 
-      transform: translateY(0);
-    }
+.main-nav__submenu-btn {
+  position: absolute;
+  top: 0;
+  right: -10px;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+
+  color: $color-site-accent;
+
+  background-color: $color-transparent;
+  border: none;
+  cursor: pointer;
+
+  transition:
+    color $trans-default,
+    transform $trans-default;
+
+  &.is-disabled,
+  &:disabled {
+    opacity: 0.5;
+
+    pointer-events: none;
+  }
+
+  .is-active & {
+    transform: rotate(90deg);
+  }
+
+  @include hover-focus {
+    color: $color-site-accent-action;
+  }
+
+  @include vp-1519 {
+    display: flex;
   }
 }
 
 .main-nav__submenu-list {
   @include clear-list;
 
-  visibility: hidden;
-  opacity: 0;
-
-  position: absolute;
-  left: 0;
-  top: 100%;
-  z-index: -1;
-  transform: translateY(-10px);
-
   width: max-content;
   max-width: 280px;
   padding-left: 28px;
   padding-right: 38px;
 
-  background-color: $color-header-bg;
-  box-shadow: $shadow-header-submenu;
+  @include rvp-1520 {
+    visibility: hidden;
+    opacity: 0;
 
-  transition:
-    visibility $trans-default,
-    opacity $trans-default,
-    transform $trans-default;
+    position: absolute;
+    left: 0;
+    top: calc(100% + var(--padding-box));
+    z-index: -2;
+    transform: translateY(-10px);
+
+    max-height: unset !important;
+
+    background-color: $color-header-bg;
+    box-shadow: $shadow-header-menu;
+
+    transition:
+      visibility $trans-default,
+      opacity $trans-default,
+      transform $trans-default;
+  }
+
+  @include vp-1519 {
+    max-width: unset;
+    width: 100%;
+    padding-right: 0;
+  }
 }
 
 .main-nav__submenu-item {
@@ -63,11 +222,7 @@
   border-top: 1px solid $color-header-menu-delimeter;
 
   &:first-child {
-    padding-top: 25px;
-  }
-
-  &:last-child {
-    padding-bottom: 20px;
+    margin-top: 10px;
   }
 }
 
@@ -76,6 +231,9 @@
 }
 
 .main-nav__phone {
+  flex-shrink: 0;
+  display: block;
+
   font-weight: 600;
   color: $color-site-accent;
 

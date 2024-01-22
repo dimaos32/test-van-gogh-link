@@ -74,3 +74,10 @@
     @content;
   }
 }
+
+
+@mixin rvp-1520 {
+  @media (min-width: $vp-1520) {
+    @content;
+  }
+}

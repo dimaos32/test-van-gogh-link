@@ -1,0 +1,79 @@
+mixin main-nav()
+
+  -
+    const headerLinks = [
+      {
+        href: "#",
+        text: "Интернет",
+      },
+      {
+        href: "#",
+        text: "Телевидение",
+      },
+      {
+        href: "#",
+        text: "Выгодно",
+        list: [
+          {
+            href: "#",
+            text: "Интернет+TV",
+          },
+          {
+            href: "#",
+            text: "Конструктор тарифа",
+          },
+        ],
+      },
+      {
+        href: "#",
+        text: "Видеонаблюдение",
+      },
+      {
+        href: "#",
+        text: "Оборудование",
+      },
+      {
+        href: "#",
+        text: "Информация",
+        list: [
+          {
+            href: "#",
+            text: "Новости",
+          },
+          {
+            href: "#",
+            text: "Вакансии",
+          },
+        ],
+      },
+      {
+        href: "#",
+        text: "Контакты",
+      },
+    ]
+
+  nav.main-nav&attributes(attributes)
+    .main-nav__overlay
+    .main-nav__inner
+      ul.main-nav__list(data-accordion="parent", data-destroy="(max-width: 1519px)")
+        each link in headerLinks
+          - const activeState = currentUrl === link.href
+          - const dataAccordion = link.list ? "element" : false
+          li.main-nav__item(data-accordion= dataAccordion)
+            if activeState
+              span.main-nav__link.is-active= link.text
+            else
+              if link.list
+                button.main-nav__submenu-btn(type="button", data-accordion="button")
+                  +icon("chevron", 24, 24)
+              +link(link).main-nav__link
+              if link.list
+                ul.main-nav__submenu-list(data-accordion="content")
+                  each sublink in link.list
+                    - const activeState = currentUrl === sublink.href
+                    li.main-nav__submenu-item
+                      if activeState
+                        span.main-nav__sublink.is-active= sublink.text
+                      else
+                        +link(sublink).main-nav__sublink
+      +link({ href: "tel:+73496458000", text: "+7 (3496) 45-80-00" }).main-nav__phone
