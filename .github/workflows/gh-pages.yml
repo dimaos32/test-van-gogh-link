@@ -41,6 +41,9 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Optimize images
+        run: npm run optimize
+
       - name: Create robots.txt
         run: npm run robots
 

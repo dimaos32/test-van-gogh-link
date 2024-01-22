@@ -16,6 +16,8 @@ jobs:
         run: npm i
       - name: Build
         run: npm run build
+      - name: Optimize images
+        run: npm run optimize
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:

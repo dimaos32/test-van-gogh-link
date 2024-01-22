@@ -29,6 +29,7 @@ const initMenu = () => {
 
   const openMenu = () => {
     toggle.classList.add('is-opened');
+    toggle.ariaPressed = true;
     nav.classList.add('is-opened');
 
     focusLock.lock('.main-nav', false);
@@ -40,6 +41,7 @@ const initMenu = () => {
 
   const closeMenu = () => {
     toggle.classList.remove('is-opened');
+    toggle.ariaPressed = true;
     nav.classList.remove('is-opened');
 
     focusLock.unlock(false);
@@ -58,7 +60,7 @@ const initMenu = () => {
   };
 
   const onNavClick = ({ target }) => {
-    if (target.closest('.main-nav__link', '.main-nav__sublink')) {
+    if (target.closest('.main-nav__link') || target.closest('.main-nav__sublink')) {
       closeMenu();
     }
   };
