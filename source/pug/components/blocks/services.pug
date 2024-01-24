@@ -1,0 +1,33 @@
+mixin services()
+  -
+    const services = [
+      {
+        cover: ["content", "service-01", "jpg", "380", "250"],
+        title: "Городские камеры",
+        descr: "Будьте в курсе всех событий не выходя из дома",
+        price: "0",
+        link: { text: "Узнать подробнее", href: "#" },
+      },
+      {
+        cover: ["content", "service-02", "jpg", "380", "250"],
+        title: "Дворовые камеры",
+        descr: "Наблюдайте за вашим имуществом не выходя из дома через любое устройство",
+        link: { text: "Узнать подробнее", href: "#" },
+      },
+      {
+        cover: ["content", "service-03", "jpg", "380", "250"],
+        title: "Персональные камеры",
+        descr: "Где бы вы ни находились, вы всегда можете узнать о происходящем дома с любого устройства",
+        priceFrom: "350",
+        link: { text: "Узнать подробнее", href: "#" },
+      },
+    ]
+
+  section.services
+    .container
+      h2.services__title Доступные услуги
+      ul.services__list
+        each service in services
+          li.services__item
+            +service-card(service)
+

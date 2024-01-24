@@ -7,6 +7,7 @@
 }
 
 .header__inner {
+  min-width: 320px;
   --padding-box: 10px;
 
   padding: var(--padding-box) 0;

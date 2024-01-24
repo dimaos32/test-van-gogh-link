@@ -8,6 +8,7 @@ $color-default-white:               #ffffff;
 $color-transparent:                 rgba(255, 255, 255, 0);
 
 $color-nero:                        #1f1f1f;
+$color-grey:                        #808080;
 $color-whisper:                     #e7e7e7;
 $color-white-smoke:                 #f8f8f8;
 
@@ -28,6 +29,10 @@ $color-header-menu-delimeter:       $color-whisper;
 
 $color-hero-bg:                     $color-white-smoke;
 
+$color-service-card-bg:             $color-default-white;
+$color-service-card-cover-bg:       $color-whisper;
+$color-service-text-secondary:      $color-grey;
+
 
 // Gradient
 
@@ -35,6 +40,8 @@ $shadow-header:
   1px 1px 3px 1px rgba($color: $color-default-black, $alpha: 0.05);
 $shadow-header-menu:
   1px 1px 3px 1px rgba($color: $color-default-black, $alpha: 0.05);
+$shadow-service-card:
+  0px 4px 14px 0 rgba($color: $color-default-black, $alpha: 0.12);
 
 // Typography
 // ---------------------------------

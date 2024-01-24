@@ -1,0 +1,15 @@
+mixin service-card({ cover, title, descr, price, priceFrom, link })
+
+  article.service-card
+    +img(...cover).service-card__cover
+    h3.service-card__title= title
+    p.service-card__descr= descr
+    p.service-card__price
+      if price
+        span.service-card__price-value= price
+      else if priceFrom
+        span.service-card__price-prefix от
+        span.service-card__price-value= priceFrom
+      if price || priceFrom
+        span.service-card__price-unit #[u руб]#[br]мес
+    +btn(link).service-card__action-btn
