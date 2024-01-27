@@ -133,8 +133,10 @@
 
   color: $color-header-text;
 
-  .main-nav__submenu-btn + & {
-    margin-right: 64px;
+  @include vp-1519 {
+    .main-nav__submenu-btn + & {
+      margin-right: 64px;
+    }
   }
 }
 
