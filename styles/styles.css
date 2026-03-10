@@ -1,0 +1,280 @@
+:root {
+  --color-extra-dark-grey: #272a33;
+  --color-light-grey: : #d4d4d6;
+  --color-extra-light-grey: : #eef3f8;
+  --color-white: #ffffff;
+  --color-orange: #ee753e;
+  --color-green: #4fcf36;
+
+  --color-txt-primary: var(--color-extra-dark-grey);
+  --color-bg-primary: var(--color-white);
+  --color-bg-secondary: var(--color-extra-light-grey);
+  --color-accent: var(--color-orange);
+
+  --ff-primary: "Open Sans", sans-serif;
+  --ff-secondary: "Roboto", sans-serif;
+
+  --transition-default-time: 0.3s;
+  --transition-default-function: ease;
+  --transition-default: var(--transition-default-time)
+    var(--transition-default-function);
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Open Sans";
+  font-display: swap;
+  src: url(../fonts/open-sans-400.woff2) format("woff2");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Open Sans";
+  font-display: swap;
+  src: url(../fonts/open-sans-700.woff2) format("woff2");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Roboto";
+  font-display: swap;
+  src: url(../fonts/roboto-400.woff2) format("woff2");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Roboto";
+  font-display: swap;
+  src: url(../fonts/roboto-700.woff2) format("woff2");
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-block-size: 100dvh;
+
+  font-size: 100%;
+}
+
+html {
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--ff-primary);
+  font-size: 100%;
+  line-height: 1.4;
+  color: var(--color-txt-primary);
+
+  background-color: var(--color-bg-primary);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* оптимизация выравнивания шрифта относительно центра строки */
+  text-rendering: optimizelegibility;
+
+  /* если по прежнему есть проблемы с выравниванием
+  https://transfonter.org/ - включите настройку https://prnt.sc/12rnt6g и переконвертируйте шрифт */
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  inline-size: 100%;
+  min-inline-size: 360px;
+  block-size: 100%;
+}
+
+main {
+  flex-grow: 1;
+  inline-size: 100%;
+  min-inline-size: 100%;
+}
+
+main > section {
+  margin-block: 80px;
+}
+
+body:not(:has(.footer)) main > section:last-child {
+  margin-block-end: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  transition: color var(--transition-default);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-accent);
+}
+
+img,
+video {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+textarea {
+  resize: none;
+}
+
+/* chrome autofill background removal
+если на проекте у инпутов используются разные цвета фонов\текста -
+удалите это из глобала и используйте локально с нужными цветами
+rgba не подойдет, сконвертируйте цвет в hex без прозрачности
+если в стилях уже используется box-shadow есть другое решение -
+задать к списку транзишенов `background-color 10000000s ease-out` */
+input:-webkit-autofill {
+  box-shadow: inset 0 0 0 1000px var(--color-white);
+  -webkit-text-fill-color: var(--color-black);
+}
+
+/* firefox placeholder \ invalid fix + ios bdrs */
+input,
+textarea {
+  border-radius: 0;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  opacity: 1;
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+}
+
+input:invalid,
+textarea:invalid {
+  box-shadow: none;
+}
+
+select {
+  border-radius: 0;
+}
+
+/* chrome search X removal */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* без этого на Samsung в хроме есть стрелка, и она прилипает к правому краю */
+input[type="date"],
+input[type="month"],
+input[type="time"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* ios button \ inputs reset */
+select,
+textarea,
+input:matches(
+  [type="email"],
+  [type="number"],
+  [type="password"],
+  [type="search"],
+  [type="tel"],
+  [type="text"],
+  [type="url"]
+) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}
+
+.container {
+  inline-size: 360px;
+  margin-inline: auto;
+  padding-inline: 10px;
+}
+
+@media (min-width: 390px) {
+  .container {
+    inline-size: 390px;
+    padding-inline: 15px;
+  }
+}
+
+@media (min-width: 414px) {
+  .container {
+    inline-size: 400px;
+    padding-inline: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    inline-size: 636px;
+    padding-inline: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    inline-size: 848px;
+    padding-inline: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    inline-size: 1280px;
+    padding-inline: 60px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    inline-size: 1600px;
+    padding-inline: 80px;
+  }
+}
