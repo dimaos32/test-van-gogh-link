@@ -11,7 +11,7 @@
     <title>Тестовое задание для Van Gogh-Link</title>
   </head>
 
-  <body>
+  <body class="page">
     <header class="header">
       <div class="container">
         <div class="header__inner">
@@ -24,6 +24,46 @@
               alt="Логотип"
             />
           </a>
+
+          <nav class="header__nav main-nav">
+            <div class="main-nav__overlay"></div>
+            <div class="main-nav__menu">
+              <div class="main-nav__menu-inner">
+                <ul class="main-nav__list">
+                  <li class="main-nav__item">
+                    <a class="main-nav__link" href="index.html">Главная</a>
+                  </li>
+                  <li class="main-nav__item">
+                    <a class="main-nav__link" href="catalog.html">Каталог</a>
+                  </li>
+                  <li class="main-nav__item">
+                    <a class="main-nav__link" href="about.html">О компании</a>
+                  </li>
+                  <li class="main-nav__item">
+                    <a class="main-nav__link" href="about.html"
+                      >Оплата и доставка</a
+                    >
+                  </li>
+                  <li class="main-nav__item">
+                    <a class="main-nav__link" href="contacts.html">Контакты</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <button
+              class="main-nav__toggle"
+              type="button"
+              aria-label="Переключатель меню"
+            >
+              <div class="main-nav__toggle-bar main-nav__toggle-bar--top"></div>
+              <div
+                class="main-nav__toggle-bar main-nav__toggle-bar--middle"
+              ></div>
+              <div
+                class="main-nav__toggle-bar main-nav__toggle-bar--bottom"
+              ></div>
+            </button>
+          </nav>
         </div>
       </div>
     </header>
