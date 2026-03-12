@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Тестовое задание для Van Gogh-Link" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <script type="module" src="scripts/scripts.js"></script>
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>Тестовое задание для Van Gogh-Link</title>
+  </head>
+
+  <body class="page page--flexible">
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <a class="header__logo logo" href="index.html">
+            <img
+              class="logo__img"
+              src="images/logo.svg"
+              width="185"
+              height="40"
+              alt="Логотип"
+            />
+          </a>
+
+          <nav class="header__nav main-nav">
+            <div class="main-nav__overlay"></div>
+            <div class="main-nav__menu">
+              <div class="main-nav__menu-inner">
+                <ul class="main-nav__list">
+                  <li class="main-nav__item">
+                    <a class="main-nav__link" href="index.html">Главная</a>
+                  </li>
+                  <li class="main-nav__item">
+                    <a class="main-nav__link" href="catalog.html">Каталог</a>
+                  </li>
+                  <li class="main-nav__item">
+                    <a class="main-nav__link" href="about.html">О компании</a>
+                  </li>
+                  <li class="main-nav__item">
+                    <a class="main-nav__link" href="about.html"
+                      >Оплата и доставка</a
+                    >
+                  </li>
+                  <li class="main-nav__item">
+                    <a class="main-nav__link" href="contacts.html">Контакты</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <button
+              class="main-nav__toggle"
+              type="button"
+              aria-label="Переключатель меню"
+            >
+              <div class="main-nav__toggle-bar main-nav__toggle-bar--top"></div>
+              <div
+                class="main-nav__toggle-bar main-nav__toggle-bar--middle"
+              ></div>
+              <div
+                class="main-nav__toggle-bar main-nav__toggle-bar--bottom"
+              ></div>
+            </button>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="visually-hidden">Лифтовое оборудование SPARTSPRO</h1>
+
+      <section class="products">
+        <div class="container">
+          <h2 class="section-title">Рекомендуемое оборудование</h2>
+          <ul class="products__list">
+            <li class="products__item">
+              <article class="product-card">
+                <div class="product-card__cover">
+                  <picture>
+                    <source
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                      srcset="
+                        images/product-01.webp    1x,
+                        images/product-01@2x.webp 2x
+                      "
+                    />
+                    <source
+                      type="image/webp"
+                      srcset="
+                        images/product-01-mobile.webp    1x,
+                        images/product-01-mobile@2x.webp 2x
+                      "
+                    />
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="
+                        images/product-01.png    1x,
+                        images/product-01@2x.png 2x
+                      "
+                    />
+                    <img
+                      class="product-card__cover-img"
+                      src="images/product-01-mobile.png"
+                      srcset="images/product-01-mobile@2x.png 2x"
+                      width="170"
+                      height="170"
+                      alt=""
+                    />
+                  </picture>
+                </div>
+                <div class="product-card__content">
+                  <h3 class="product-card__title">
+                    Стальной канат для лифта GRS 9X21F(9Х17)-IWRC 1570
+                  </h3>
+                  <p class="product-card__availability">
+                    <svg
+                      class="product-card__availability-icon check-icon"
+                      width="14"
+                      height="14"
+                    >
+                      <use href="images/sprite.svg#icon-check"></use>
+                    </svg>
+                    В наличии 50 м.
+                  </p>
+                  <a href="#" class="btn product-card__btn">Подробнее</a>
+                </div>
+              </article>
+            </li>
+
+            <li class="products__item">
+              <article class="product-card">
+                <div class="product-card__cover">
+                  <picture>
+                    <source
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                      srcset="
+                        images/product-02.webp    1x,
+                        images/product-02@2x.webp 2x
+                      "
+                    />
+                    <source
+                      type="image/webp"
+                      srcset="
+                        images/product-02-mobile.webp    1x,
+                        images/product-02-mobile@2x.webp 2x
+                      "
+                    />
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="
+                        images/product-02.png    1x,
+                        images/product-02@2x.png 2x
+                      "
+                    />
+                    <img
+                      class="product-card__cover-img"
+                      src="images/product-02-mobile.png"
+                      srcset="images/product-02-mobile@2x.png 2x"
+                      width="170"
+                      height="170"
+                      alt=""
+                    />
+                  </picture>
+                </div>
+                <div class="product-card__content">
+                  <h3 class="product-card__title">
+                    Плоский тяговый ремень для лифта GRS AAA717X1 (12 кордов)
+                  </h3>
+                  <p class="product-card__availability">
+                    <svg
+                      class="product-card__availability-icon check-icon check-icon--warning"
+                      width="14"
+                      height="14"
+                    >
+                      <use href="images/sprite.svg#icon-check"></use>
+                    </svg>
+                    Под заказ
+                  </p>
+                  <a href="#" class="btn product-card__btn">Подробнее</a>
+                </div>
+              </article>
+            </li>
+
+            <li class="products__item">
+              <article class="product-card">
+                <div class="product-card__cover">
+                  <picture>
+                    <source
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                      srcset="
+                        images/product-01.webp    1x,
+                        images/product-01@2x.webp 2x
+                      "
+                    />
+                    <source
+                      type="image/webp"
+                      srcset="
+                        images/product-01-mobile.webp    1x,
+                        images/product-01-mobile@2x.webp 2x
+                      "
+                    />
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="
+                        images/product-01.png    1x,
+                        images/product-01@2x.png 2x
+                      "
+                    />
+                    <img
+                      class="product-card__cover-img"
+                      src="images/product-01-mobile.png"
+                      srcset="images/product-01-mobile@2x.png 2x"
+                      width="170"
+                      height="170"
+                      alt=""
+                    />
+                  </picture>
+                </div>
+                <div class="product-card__content">
+                  <h3 class="product-card__title">
+                    Стальной канат для лифта GRS 9X21F(9Х17)-IWRC 1570
+                  </h3>
+                  <p class="product-card__availability">
+                    <svg
+                      class="product-card__availability-icon check-icon"
+                      width="14"
+                      height="14"
+                    >
+                      <use href="images/sprite.svg#icon-check"></use>
+                    </svg>
+                    В наличии 50 м.
+                  </p>
+                  <a href="#" class="btn product-card__btn">Подробнее</a>
+                </div>
+              </article>
+            </li>
+
+            <li class="products__item">
+              <article class="product-card">
+                <div class="product-card__cover">
+                  <picture>
+                    <source
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                      srcset="
+                        images/product-01.webp    1x,
+                        images/product-01@2x.webp 2x
+                      "
+                    />
+                    <source
+                      type="image/webp"
+                      srcset="
+                        images/product-01-mobile.webp    1x,
+                        images/product-01-mobile@2x.webp 2x
+                      "
+                    />
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="
+                        images/product-01.png    1x,
+                        images/product-01@2x.png 2x
+                      "
+                    />
+                    <img
+                      class="product-card__cover-img"
+                      src="images/product-01-mobile.png"
+                      srcset="images/product-01-mobile@2x.png 2x"
+                      width="170"
+                      height="170"
+                      alt=""
+                    />
+                  </picture>
+                </div>
+                <div class="product-card__content">
+                  <h3 class="product-card__title">
+                    Стальной канат для лифта GRS 9X21F(9Х17)-IWRC 1570
+                  </h3>
+                  <p class="product-card__availability">
+                    <svg
+                      class="product-card__availability-icon check-icon"
+                      width="14"
+                      height="14"
+                    >
+                      <use href="images/sprite.svg#icon-check"></use>
+                    </svg>
+                    В наличии 50 м.
+                  </p>
+                  <a href="#" class="btn product-card__btn">Подробнее</a>
+                </div>
+              </article>
+            </li>
+
+            <li class="products__item">
+              <article class="product-card">
+                <div class="product-card__cover">
+                  <picture>
+                    <source
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                      srcset="
+                        images/product-02.webp    1x,
+                        images/product-02@2x.webp 2x
+                      "
+                    />
+                    <source
+                      type="image/webp"
+                      srcset="
+                        images/product-02-mobile.webp    1x,
+                        images/product-02-mobile@2x.webp 2x
+                      "
+                    />
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="
+                        images/product-02.png    1x,
+                        images/product-02@2x.png 2x
+                      "
+                    />
+                    <img
+                      class="product-card__cover-img"
+                      src="images/product-02-mobile.png"
+                      srcset="images/product-02-mobile@2x.png 2x"
+                      width="170"
+                      height="170"
+                      alt=""
+                    />
+                  </picture>
+                </div>
+                <div class="product-card__content">
+                  <h3 class="product-card__title">
+                    Плоский тяговый ремень для лифта GRS AAA717X1 (12 кордов)
+                  </h3>
+                  <p class="product-card__availability">
+                    <svg
+                      class="product-card__availability-icon check-icon"
+                      width="14"
+                      height="14"
+                    >
+                      <use href="images/sprite.svg#icon-check"></use>
+                    </svg>
+                    В наличии 50 м.
+                  </p>
+                  <a href="#" class="btn product-card__btn">Подробнее</a>
+                </div>
+              </article>
+            </li>
+
+            <li class="products__item">
+              <article class="product-card">
+                <div class="product-card__cover">
+                  <picture>
+                    <source
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                      srcset="
+                        images/product-01.webp    1x,
+                        images/product-01@2x.webp 2x
+                      "
+                    />
+                    <source
+                      type="image/webp"
+                      srcset="
+                        images/product-01-mobile.webp    1x,
+                        images/product-01-mobile@2x.webp 2x
+                      "
+                    />
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="
+                        images/product-01.png    1x,
+                        images/product-01@2x.png 2x
+                      "
+                    />
+                    <img
+                      class="product-card__cover-img"
+                      src="images/product-01-mobile.png"
+                      srcset="images/product-01-mobile@2x.png 2x"
+                      width="170"
+                      height="170"
+                      alt=""
+                    />
+                  </picture>
+                </div>
+                <div class="product-card__content">
+                  <h3 class="product-card__title">
+                    Стальной канат для лифта GRS 9X21F(9Х17)-IWRC 1570
+                  </h3>
+                  <p class="product-card__availability">
+                    <svg
+                      class="product-card__availability-icon check-icon"
+                      width="14"
+                      height="14"
+                    >
+                      <use href="images/sprite.svg#icon-check"></use>
+                    </svg>
+                    В наличии 50 м.
+                  </p>
+                  <a href="#" class="btn product-card__btn">Подробнее</a>
+                </div>
+              </article>
+            </li>
+          </ul>
+
+          <a href="catalog.html" class="btn btn--lg products__catalog-btn"
+            >Перейти в каталог</a
+          >
+        </div>
+      </section>
+
+      <section class="about">
+        <div class="container">
+          <h2 class="section-title">О компании</h2>
+
+          <div class="about__inner">
+            <ul class="about__gallery">
+              <li class="about__gallery-item about__gallery-item--wide">
+                <picture>
+                  <source
+                    media="(min-width: 768px)"
+                    type="image/webp"
+                    srcset="images/about-01.webp 1x, images/about-01@2x.webp 2x"
+                  />
+                  <source
+                    type="image/webp"
+                    srcset="
+                      images/about-01-mobile.webp    1x,
+                      images/about-01-mobile@2x.webp 2x
+                    "
+                  />
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="images/about-01.jpg 1x, images/about-01@2x.jpg 2x"
+                  />
+                  <img
+                    class="about__gallery-img"
+                    src="images/about-01-mobile.jpg"
+                    srcset="images/about-01-mobile@2x.jpg 2x"
+                    width="768"
+                    height="221"
+                    alt=""
+                  />
+                </picture>
+              </li>
+
+              <li class="about__gallery-item">
+                <picture>
+                  <source
+                    media="(min-width: 768px)"
+                    type="image/webp"
+                    srcset="images/about-02.webp 1x, images/about-02@2x.webp 2x"
+                  />
+                  <source
+                    type="image/webp"
+                    srcset="
+                      images/about-02-mobile.webp    1x,
+                      images/about-02-mobile@2x.webp 2x
+                    "
+                  />
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="images/about-02.jpg 1x, images/about-02@2x.jpg 2x"
+                  />
+                  <img
+                    class="about__gallery-img"
+                    src="images/about-02-mobile.jpg"
+                    srcset="images/about-02-mobile@2x.jpg 2x"
+                    width="368"
+                    height="221"
+                    alt=""
+                  />
+                </picture>
+              </li>
+
+              <li class="about__gallery-item">
+                <picture>
+                  <source
+                    media="(min-width: 768px)"
+                    type="image/webp"
+                    srcset="images/about-03.webp 1x, images/about-03@2x.webp 2x"
+                  />
+                  <source
+                    type="image/webp"
+                    srcset="
+                      images/about-03-mobile.webp    1x,
+                      images/about-03-mobile@2x.webp 2x
+                    "
+                  />
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="images/about-03.jpg 1x, images/about-03@2x.jpg 2x"
+                  />
+                  <img
+                    class="about__gallery-img"
+                    src="images/about-03-mobile.jpg"
+                    srcset="images/about-03-mobile@2x.jpg 2x"
+                    width="365"
+                    height="177"
+                    alt=""
+                  />
+                </picture>
+              </li>
+            </ul>
+
+            <div class="about__content">
+              <p>
+                <strong
+                  >Компания «SPARTSPRO» специализируется на поставках лифтового
+                  оборудования, комплектующих и запчастей для лифтов и
+                  эскалаторов ведущих мировых и российских
+                  производителей.</strong
+                >
+              </p>
+
+              <ul>
+                <li>
+                  <svg
+                    class="check-icon check-icon--warning"
+                    width="24"
+                    height="24"
+                  >
+                    <use href="images/sprite.svg#icon-check"></use>
+                  </svg>
+                  Гарантия качества – работаем только с проверенными
+                  производителями.
+                </li>
+                <li>
+                  <svg
+                    class="check-icon check-icon--warning"
+                    width="24"
+                    height="24"
+                  >
+                    <use href="images/sprite.svg#icon-check"></use>
+                  </svg>
+                  Собственный склад – более 30 000 наименований в наличии для
+                  оперативных отгрузок.
+                </li>
+                <li>
+                  <svg
+                    class="check-icon check-icon--warning"
+                    width="24"
+                    height="24"
+                  >
+                    <use href="images/sprite.svg#icon-check"></use>
+                  </svg>
+                  Соблюдение сроков – приоритет компании: быстрая обработка
+                  заказов и доставка без задержек.
+                </li>
+              </ul>
+
+              <p>
+                Мы обеспечиваем бесперебойные поставки для ваших проектов.
+                Оставьте заявку – и получите коммерческое предложение в
+                кратчайшие сроки!
+              </p>
+
+              <a href="#" class="btn about__btn">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

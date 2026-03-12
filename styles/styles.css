@@ -323,6 +323,11 @@ button,
   padding-inline: 10px;
 }
 
+.page--flexible .container {
+  max-inline-size: 1600px;
+  inline-size: unset;
+}
+
 .header {
   padding-block: 16px;
 }
@@ -412,6 +417,11 @@ button,
   padding-inline: 10px;
 
   list-style-type: none;
+}
+
+.page--flexible .main-nav__list {
+  max-inline-size: 1600px;
+  inline-size: unset;
 }
 
 .main-nav__item {
