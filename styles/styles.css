@@ -787,13 +787,11 @@ button,
   }
 
   .product-card__cover {
-    block-size: 100%;
+    block-size: calc(100% + 2px);
     inline-size: 220px;
     margin-block: -1px;
     -webkit-margin-start: -1px;
     margin-inline-start: -1px;
-    -webkit-margin-start: 0;
-    margin-inline-start: 0;
   }
 
   .product-card__content {
